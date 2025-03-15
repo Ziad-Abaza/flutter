@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/404.dart';
-import 'package:my_app/screens/Following.dart';
-import 'package:my_app/screens/MyCollection.dart';
-import 'package:my_app/screens/MyProfile.dart';
-import 'package:my_app/widgets/custom_appbar.dart';
-import './screens/home.dart';
+import 'package:my_app/screens/following_screen.dart';
+import 'package:my_app/screens/my_collection_screen.dart';
+import 'package:my_app/screens/my_profile_screen.dart';
+import 'package:my_app/widgets/custom_app_bar.dart';
+import 'screens/home_screen.dart';
 import './screens/collaborate_screen.dart';
 import './widgets/custom_bottom_nav.dart';
 
@@ -21,11 +21,11 @@ class _MainScreenState extends State<MainScreen> {
   late int _selectedIndex;
 
   final List<Widget> _pages = [
-    HomeScreen(),
-    Following(),
-    CollaborateScreen(),
-    MyProfile(),
-    NotFoundPage(),
+    const HomeScreen(),
+    const Following(),
+    const CollaborateScreen(),
+    const MyProfile(),
+    const NotFoundPage(),
   ];
 
   @override
@@ -44,11 +44,11 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.only(top: 8, right: 8, left: 8),
         child: AnimatedSwitcher(
-          duration: Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 500),
           child: _pages[_selectedIndex],
         ),
       ),

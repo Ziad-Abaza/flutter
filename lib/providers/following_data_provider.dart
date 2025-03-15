@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/repositories/following_repository.dart';
-import 'package:my_app/models/FollowingData.dart';
+import 'package:my_app/models/following_model.dart';
 
 final apiRepositoryProvider = Provider<FollowingRepository>((ref) => FollowingRepository());
 

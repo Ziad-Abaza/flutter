@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:my_app/config/api.dart';
-import 'package:my_app/models/Homedata.dart';
+import 'package:my_app/models/home_model.dart';
 
 class HomeRepository {
   final String _baseUrl = ApiConfig.baseUrl;

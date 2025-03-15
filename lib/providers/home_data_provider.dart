@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/repositories/home_repository.dart';
-import 'package:my_app/models/Homedata.dart';
+import 'package:my_app/models/home_model.dart';
 
 final apiRepositoryProvider = Provider<HomeRepository>((ref) => HomeRepository());
 

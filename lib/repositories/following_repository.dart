@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:my_app/config/api.dart';
 import 'package:my_app/config/database_service.dart';
-import 'package:my_app/models/FollowingData.dart';
+import 'package:my_app/models/following_model.dart';
 
 class FollowingRepository {
   final String _baseUrl = ApiConfig.baseUrl;

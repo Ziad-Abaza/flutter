@@ -2,14 +2,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/main_screen.dart';
-import 'package:my_app/screens/home.dart';
+import 'package:my_app/screens/profile_sittings_screen.dart';
+import 'package:my_app/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:my_app/screens/home.dart';
 import 'package:my_app/screens/login_screen.dart';
 import 'package:my_app/screens/register_screen.dart';
-import 'package:my_app/screens/walkthrough.dart';
-import 'package:my_app/screens/MyProfile.dart';
-import 'package:my_app/screens/MyCollection.dart';
+import 'package:my_app/screens/walk_through_screen.dart';
+import 'package:my_app/screens/my_profile_screen.dart';
+import 'package:my_app/screens/my_collection_screen.dart';
 import 'package:my_app/screens/collaborate_screen.dart';
 import 'package:my_app/screens/404.dart';
 
@@ -29,7 +30,7 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   final bool walkthroughCompleted;
-  const MyApp({Key? key, required this.walkthroughCompleted}) : super(key: key);
+  const MyApp({super.key, required this.walkthroughCompleted});
   
   @override
   Widget build(BuildContext context) {
@@ -43,16 +44,17 @@ class MyApp extends StatelessWidget {
       initialRoute: walkthroughCompleted ? '/login' : '/walkthrough',
       routes: {
         '/walkthrough': (context) => const Walkthrough(),
-        '/login': (context) => LoginScreen(),
-        '/signup': (context) => RegisterScreen(),
-        '/': (context) => MainScreen(),
-        '/home': (context) => HomeScreen(),
-        '/myprofile': (context) => MyProfile(),
-        '/mycollection': (context) => MyCollection(),
-        '/collaborate': (context) => CollaborateScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/signup': (context) => const RegisterScreen(),
+        '/': (context) => const MainScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/myprofile': (context) => const MyProfile(),
+        '/mycollection': (context) => const MyCollection(),
+        '/collaborate': (context) => const CollaborateScreen(),
+        '/profileSitting': (context) => const ProfileSittings(),
       },
       onUnknownRoute: (settings) => MaterialPageRoute(
-        builder: (context) => NotFoundPage(),
+        builder: (context) => const NotFoundPage(),
       ),
     );
   }
